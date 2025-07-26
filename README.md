@@ -7,7 +7,7 @@
 Hello, neighbor! We're so glad you're here. This little program was made with care, just for people like you. It believes that everyone is special, and that even small, simple things can make the world a better place.
 
 What's this all about?
-This is the mr-rogers program. It helps brighten your day with a loving quote from the man himself. Just like Mr. Rogers, it tries to be a friendly and helpful presence on your computer. It does its job quietly, simply, and without any fuss.
+This is mr-rogers. It helps brighten your day with a loving quote from the man himself. Just like Mr. Rogers, it tries to be a friendly and helpful presence on your computer. It does its job quietly, simply, and without any fuss.
 
 ## Putting On Your Sneakers (Installation)
 Getting started is as easy as changing into your favorite sweater. You just need to follow these simple steps.
