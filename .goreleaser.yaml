@@ -46,6 +46,7 @@ brews:
     tap:
       owner: P1NK0 # <-- IMPORTANT: Change to your GitHub username
       name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
     commit_author:
       name: goreleaserbot
       email: bot@goreleaser.com
