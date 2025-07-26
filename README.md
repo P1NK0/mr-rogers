@@ -18,18 +18,49 @@ Getting started is as easy as changing into your favorite sweater. You just need
     # Move into the neighborhood
     cd mr-rogers
 
-    # Install the necessary things
-    # (e.g., npm install, pip install -r requirements.txt, etc.)
-
 And just like that, you're ready to go!
 
-Won't You Be My Neighbor? (Usage)
-We'd love for you to use this program. To get it started, you just need to run the following command in your terminal:
+On macOS and Linux, it will be named mr-rogers.
 
-## An example of how to run 
-    ./mr-rogers --greet "neighbor"
+On Windows, it will be named mr-rogers.exe.
 
-It's a good feeling to know you're alive. It's a happy feeling to know you're learning.
+## Making It Easy to Find
+It's always nice when things are easy to find. We'll put our new program on a special shelf where the computer always knows to look.
+
+On macOS and Linux 🐧
+From inside the mr-rogers folder, we'll move our program to a shared spot. We need to use sudo, which is like using a grown-up's key for an important door. The computer will likely ask for your password to make sure it's you.
+
+    sudo mv mr-rogers /usr/local/bin/
+
+On Windows 🪟
+First, let's create a special folder inside your personal user directory. This is a safe and tidy place for programs. We'll call it bin.
+
+    mkdir ~\.bin
+
+Next, move your new program into that folder.
+
+    move mr-rogers.exe ~\.bin
+
+Finally, we need to tell Windows to always look on our new "shelf." This is called adding it to your Path.
+
+Press the Windows Key and type "environment variables".
+
+Click on "Edit the system environment variables."
+
+Click the "Environment Variables..." button.
+
+In the top box ("User variables for..."), select the variable named Path, then click "Edit...". (If it doesn't exist, click "New..." and name the variable Path).
+
+Click "New" and type in the path to our new folder: %USERPROFILE%\.bin
+
+Click "OK" on all the windows to save your changes.
+
+## Enjoy a Moment of Kindness
+Now that you've installed it, you just need to open a new terminal and type the program's name.
+
+    mr-rogers
+
+You did it. You've made a special place for kindness on your computer. I'm proud of you.
 
 ## Helping the Neighborhood (Contributing)
 Everyone has something they can give. If you have an idea to make this neighborhood even better, we would be so happy to hear it.
