@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-// Add your favorite Mr. Rogers quotes here
+
 var quotes = []string{
 	// Original Quotes
 	"Often when you think you're at the end of something, you're at the beginning of something else.",
