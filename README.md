@@ -47,17 +47,17 @@ Next, move your new program into that folder.
 
 Finally, we need to tell Windows to always look on our new "shelf." This is called adding it to your Path.
 
-Press the Windows Key and type "environment variables".
+    Press the Windows Key and type "environment variables".
 
-Click on "Edit the system environment variables."
+    Click on "Edit the system environment variables."
 
-Click the "Environment Variables..." button.
+    Click the "Environment Variables..." button.
 
-In the top box ("User variables for..."), select the variable named Path, then click "Edit...". (If it doesn't exist, click "New..." and name the variable Path).
+    In the top box ("User variables for..."), select the variable named Path, then click "Edit...". (If it doesn't exist, click "New..." and name the variable Path).
 
-Click "New" and type in the path to our new folder: %USERPROFILE%\.bin
+    Click "New" and type in the path to our new folder: %USERPROFILE%\.bin
 
-Click "OK" on all the windows to save your changes.
+    Click "OK" on all the windows to save your changes.
 
 ## Enjoy a Moment of Kindness
 Now that you've installed it, you just need to open a new terminal and type the program's name.
