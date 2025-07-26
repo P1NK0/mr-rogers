@@ -4,34 +4,23 @@ before:
   hooks:
     - go mod tidy
 
-# We now have two separate build configurations.
+# We are back to a single, simple builds section
 builds:
-  # Build group for Linux and macOS
-  - id: nix-builds
-    main: ./mr-rogers.go
+  - main: ./mr-rogers.go
     binary: mr-rogers
     goos:
       - linux
+      - windows
       - darwin
     goarch:
       - amd64
       - arm64
 
-  # Build group specifically for Windows
-  - id: windows-builds
-    main: ./mr-rogers.go
-    binary: mr-rogers
-    goos:
-      - windows
-    goarch:
-      - amd64
-      - arm64
-
-
+# This archives section now explicitly ignores Windows builds
 archives:
-  - builds:
-      - nix-builds
-    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+  - name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    ignore:
+      - goos: windows
 
 checksum:
   name_template: 'checksums.txt'
@@ -44,7 +33,7 @@ changelog:
 brews:
   - name: mr-rogers
     tap:
-      owner: P1NK0 # <-- IMPORTANT: Change to your GitHub username
+      owner: P1NK0
       name: homebrew-tap
       token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
     commit_author:
