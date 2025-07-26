@@ -1,0 +1,24 @@
+project_name: mr-rogers
+before:
+  hooks:
+    - go mod tidy
+builds:
+  - main: ./mr-rogers.go
+    binary: mr-rogers
+    goos:
+      - linux
+      - windows
+      - darwin # This is the OS name for macOS
+    goarch:
+      - amd64
+      - arm64
+archives:
+  - name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+checksum:
+  name_template: 'checksums.txt'
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'

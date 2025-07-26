@@ -1,0 +1,22 @@
+# This workflow runs automatically when you push a new version tag.
+name: Release
+on:
+  push:
+    tags:
+      - 'v*' # Runs on tags like v1.0.0, v1.0.1, etc.
+jobs:
+  goreleaser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+      - uses: goreleaser/goreleaser-action@v5
+        with:
+          version: latest
+          args: release --clean
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
