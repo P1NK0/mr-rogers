@@ -4,7 +4,7 @@
 <img src="https://placehold.co/600x300/F0E68C/333333?text=Hello+Neighbor!" alt="A friendly placeholder image.">
 </p>
 
-Hello, neighbor! We're so glad you're here. This little program was made with care, just for people like you. It believes that everyone is special, and that even small, simple things can make the world a better place.
+Hello, neighbor! I'm so glad you're here. This little program was made with care, just for people like you. It believes that everyone is special, and that even small, simple things can make the world a better place.
 
 What's this all about?
 This is mr-rogers. It helps brighten your day with a loving quote from the man himself. Just like Mr. Rogers, it tries to be a friendly and helpful presence on your computer. It does its job quietly, simply, and without any fuss.
@@ -13,7 +13,7 @@ This is mr-rogers. It helps brighten your day with a loving quote from the man h
 Getting started is as easy as changing into your favorite sweater. You just need to follow these simple steps.
 
     # Clone the repository to your local machine
-    git clone https://github.com/your-username/mr-rogers.git
+    git clone https://github.com/P1NK0/mr-rogers.git
 
     # Move into the neighborhood
     cd mr-rogers
