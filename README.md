@@ -18,6 +18,9 @@ Getting started is as easy as changing into your favorite sweater. You just need
     # Move into the neighborhood
     cd mr-rogers
 
+    # Invite Mr. Rogers
+    go build mr-rogers
+
 And just like that, you're ready to go!
 
 On macOS and Linux, it will be named mr-rogers.
@@ -31,7 +34,8 @@ On macOS and Linux 🐧
 From inside the mr-rogers folder, we'll move our program to a shared spot. We need to use sudo, which is like using a grown-up's key for an important door. The computer will likely ask for your password to make sure it's you.
 
     sudo mv mr-rogers /usr/local/bin/
-
+    sudo chmod +x /usr/local/bin/mr-rogers
+    
 On Windows 🪟
 First, let's create a special folder inside your personal user directory. This is a safe and tidy place for programs. We'll call it bin.
 
