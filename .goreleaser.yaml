@@ -4,9 +4,10 @@ before:
   hooks:
     - go mod tidy
 
-# We are back to a single, simple builds section
+# A single build block for all platforms
 builds:
-  - main: ./mr-rogers.go
+  - id: mr-rogers
+    main: ./mr-rogers.go
     binary: mr-rogers
     goos:
       - linux
@@ -16,11 +17,14 @@ builds:
       - amd64
       - arm64
 
-# This archives section now explicitly ignores Windows builds
+# A single archive block that handles all platforms correctly
 archives:
-  - name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
-    ignore:
+  - builds:
+      - mr-rogers
+    # This key tells GoReleaser to NOT archive Windows, but use tar.gz for others
+    format_overrides:
       - goos: windows
+        format: binary
 
 checksum:
   name_template: 'checksums.txt'
@@ -39,7 +43,7 @@ brews:
     commit_author:
       name: goreleaserbot
       email: bot@goreleaser.com
-    homepage: "https://github.com/P1NK0/mr-rogers"
+    homepage: "https://github.com/P1NK0/mr-rogers" 
     description: "Get a friendly quote from Mr. Rogers in your terminal."
     install: |
       bin.install "mr-rogers"
