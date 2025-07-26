@@ -22,3 +22,16 @@ changelog:
     exclude:
       - '^docs:'
       - '^test:'
+
+brews:
+  - name: mr-rogers
+    tap:
+      owner: P1NK0
+      name: homebrew-tap
+    commit_author:
+      name: goreleaserbot
+      email: bot@goreleaser.com
+    homepage: "https://github.com/P1NK0/mr-rogers" 
+    description: "Get a friendly quote from Mr. Rogers in your terminal."
+    install: |
+      bin.install "mr-rogers"
