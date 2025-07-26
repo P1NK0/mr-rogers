@@ -1,12 +1,17 @@
-# This workflow runs automatically when you push a new version tag.
 name: Release
+
 on:
   push:
     tags:
       - 'v*' # Runs on tags like v1.0.0, v1.0.1, etc.
+
 jobs:
   goreleaser:
     runs-on: ubuntu-latest
+    # Add this permissions block to grant the required permission
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
         with:
