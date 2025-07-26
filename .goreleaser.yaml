@@ -1,22 +1,38 @@
+# .goreleaser.yaml
 project_name: mr-rogers
 before:
   hooks:
     - go mod tidy
+
+# We now have two separate build configurations.
 builds:
-  - main: ./mr-rogers.go
+  # Build group for Linux and macOS
+  - id: nix-builds
+    main: ./mr-rogers.go
     binary: mr-rogers
     goos:
       - linux
-      - windows
-      - darwin # This is the OS name for macOS
+      - darwin
     goarch:
       - amd64
       - arm64
+
+  # Build group specifically for Windows
+  - id: windows-builds
+    main: ./mr-rogers.go
+    binary: mr-rogers
+    goos:
+      - windows
+    goarch:
+      - amd64
+      - arm64
+
+
 archives:
-  - name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
-    format_overrides:
-      -goos: windows
-       format: binary
+  - builds:
+      - nix-builds
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+
 checksum:
   name_template: 'checksums.txt'
 changelog:
@@ -25,16 +41,15 @@ changelog:
     exclude:
       - '^docs:'
       - '^test:'
-
 brews:
   - name: mr-rogers
     tap:
-      owner: P1NK0
+      owner: P1NK0 # <-- IMPORTANT: Change to your GitHub username
       name: homebrew-tap
     commit_author:
       name: goreleaserbot
       email: bot@goreleaser.com
-    homepage: "https://github.com/P1NK0/mr-rogers" 
+    homepage: "https://github.com/P1NK0/mr-rogers"
     description: "Get a friendly quote from Mr. Rogers in your terminal."
     install: |
       bin.install "mr-rogers"
