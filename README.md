@@ -1,5 +1,5 @@
 
-                                        It's a Beautiful Day in this Codebase! 🏡
+                               It's a Beautiful Day in this Codebase! 🏡
 <p align="center">
 <img src="https://placehold.co/600x300/F0E68C/333333?text=Hello+Neighbor!" alt="A friendly placeholder image.">
 </p>
